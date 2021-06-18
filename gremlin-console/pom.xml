@@ -39,7 +39,7 @@ limitations under the License.
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.1</version>
+            <version>4.5.2</version>
         </dependency>
         <dependency>
             <groupId>commons-cli</groupId>
@@ -254,8 +254,7 @@ limitations under the License.
                                         <copy todir="${project.build.directory}/python">
                                             <fileset dir="src/test/python"/>
                                         </copy>
-                                        <exec dir="${project.build.directory}/python" executable="virtualenv"
-                                              failonerror="true">
+                                        <exec dir="${project.build.directory}/python" executable="virtualenv" failonerror="true">
                                             <arg line="--python=python env"/>
                                         </exec>
                                     </tasks>
@@ -270,8 +269,7 @@ limitations under the License.
                                 <configuration>
                                     <skip>${skipIntegrationTests}</skip>
                                     <target>
-                                        <exec executable="env/bin/python" dir="${project.build.directory}/python"
-                                              failonerror="true">
+                                        <exec executable="env/bin/python" dir="${project.build.directory}/python" failonerror="true">
                                             <env key="PYTHONPATH" value=""/>
                                             <arg line="setup.py build --build-lib ${project.build.outputDirectory}/Lib"/>
                                         </exec>
@@ -309,8 +307,7 @@ limitations under the License.
                                 <configuration>
                                     <skip>${skipIntegrationTests}</skip>
                                     <target>
-                                        <exec executable="env/bin/python" dir="${project.build.directory}/python"
-                                              failonerror="true">
+                                        <exec executable="env/bin/python" dir="${project.build.directory}/python" failonerror="true">
                                             <env key="PYTHONPATH" value=""/>
                                             <arg line="setup.py test"/>
                                         </exec>
